@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+    <children>
+      <Button fx:id="button" layoutX="380.0" layoutY="157.0" onAction="#handleButtonAction" text="Click Me!" />
+      <Label fx:id="label" layoutX="134.0" layoutY="148.0" minHeight="16" minWidth="69" />
+      <Button fx:id="createbutton" layoutX="230.0" layoutY="20.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="61.0" prefWidth="124.0" text="Create" />
+      <Button fx:id="readbutton" layoutX="230.0" layoutY="90.0" mnemonicParsing="false" onAction="#readCourse" prefHeight="61.0" prefWidth="124.0" text="Read" />
+      <Button fx:id="updatebutton" layoutX="230.0" layoutY="160.0" mnemonicParsing="false" onAction="#updateCourse" prefHeight="61.0" prefWidth="124.0" text="Update" />
+      <Button fx:id="deletebutton" layoutX="230.0" layoutY="230.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="61.0" prefWidth="124.0" text="Delete" />
+      <Button fx:id="readbyidbutton" layoutX="70.0" layoutY="98.0" mnemonicParsing="false" onAction="#readByID" prefHeight="61.0" prefWidth="124.0" text="ReadById" />
+      <Button fx:id="readbymabutton" layoutX="70.0" layoutY="210.0" mnemonicParsing="false" onAction="#readByMajor" prefHeight="61.0" prefWidth="124.0" text="ReadByMajor" />
+    </children>
+</AnchorPane>
