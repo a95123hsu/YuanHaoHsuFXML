@@ -44,6 +44,10 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private Button readbymabutton;
+    
+     @FXML
+    private Button searchButton;
+
 //Source:Demo Code
     @FXML
     void createCourse(ActionEvent event) {
@@ -154,6 +158,11 @@ public class FXMLDocumentController implements Initializable {
         String major = input.next();
         List<Course> s = readByMajor(major);
         System.out.println(s.toString());
+    }
+    
+     @FXML
+    void searchButton1(ActionEvent event) {
+        System.out.println("Clicked");
     }
 
 

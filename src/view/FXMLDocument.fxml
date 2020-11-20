@@ -16,5 +16,6 @@
       <Button fx:id="deletebutton" layoutX="230.0" layoutY="230.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="61.0" prefWidth="124.0" text="Delete" />
       <Button fx:id="readbyidbutton" layoutX="70.0" layoutY="98.0" mnemonicParsing="false" onAction="#readByID" prefHeight="61.0" prefWidth="124.0" text="ReadById" />
       <Button fx:id="readbymabutton" layoutX="70.0" layoutY="210.0" mnemonicParsing="false" onAction="#readByMajor" prefHeight="61.0" prefWidth="124.0" text="ReadByMajor" />
+      <Button fx:id="searchButton" layoutX="452.0" layoutY="164.0" mnemonicParsing="false" onAction="#searchButton1" prefHeight="28.0" prefWidth="100.0" text="Search" />
     </children>
 </AnchorPane>
