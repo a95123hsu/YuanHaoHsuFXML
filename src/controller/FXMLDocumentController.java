@@ -80,13 +80,13 @@ public class FXMLDocumentController implements Initializable {
         private ObservableList<Course> courseData;
 
     
-    public void setTableData(List<Course> studentList) {
+    public void setTableData(List<Course> courseList) {
 
         
         courseData = FXCollections.observableArrayList();
 
         
-        studentList.forEach(c -> {
+        courseList.forEach(c -> {
             courseData.add(c);
         });
 
@@ -212,10 +212,10 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("Clicked");
         
         //Source: Demo Code     
-        String major = searchBar.getText();
+        String name = searchBar.getText();
 
        
-        List<Course> courses = readByMajor(major);
+        List<Course> courses = readByCourse(name);
 
         if (courses == null || courses.isEmpty()) {
 
@@ -329,6 +329,19 @@ public Course readById(int id){
         }
         
         return courses;
-    }       
+    } 
+      //Source:Demo Code
+     public List<Course> readByCourse(String name) {
+        Query query = manager.createNamedQuery("Course.findByName");
+
+        query.setParameter("name", name);
+
+        List<Course> courses = query.getResultList();
+        for (Course course : courses) {
+            System.out.println(course.getId() + " " + course.getName() + " " + course.getMajor()+" "+course.getProname());
+        }
+
+        return courses;
+    }
     }        
 
