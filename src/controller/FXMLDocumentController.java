@@ -75,7 +75,34 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField searchBar;
 
+    @FXML
+    private Button advancedSearch; 
     
+     @FXML
+    void advancedSearch1(ActionEvent event) {
+        //source: demo code
+        System.out.println("clicked");
+       
+        String name = searchBar.getText();
+
+    
+        List<Course> courses = readByCourseAdvanced(name);
+
+     
+        if (courses == null || courses.isEmpty()) {
+
+           
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Search Dialog Box");
+            alert.setHeaderText("Search Results");
+            alert.setContentText("No Course Found");
+            alert.showAndWait(); 
+        } else {
+           
+            setTableData(courses);
+        }
+    }
+
 //Source: Demo Code
         private ObservableList<Course> courseData;
 
@@ -335,6 +362,21 @@ public Course readById(int id){
         Query query = manager.createNamedQuery("Course.findByName");
 
         query.setParameter("name", name);
+
+        List<Course> courses = query.getResultList();
+        for (Course course : courses) {
+            System.out.println(course.getId() + " " + course.getName() + " " + course.getMajor()+" "+course.getProname());
+        }
+
+        return courses;
+    }
+     //source:demo code
+     public List<Course> readByCourseAdvanced(String name) {
+        Query query = manager.createNamedQuery("Course.findByCourseNameAdvanced");
+
+
+        query.setParameter("name", name);
+
 
         List<Course> courses = query.getResultList();
         for (Course course : courses) {
