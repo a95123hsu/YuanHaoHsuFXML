@@ -38,7 +38,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="22.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Course Name:" wrappingWidth="99.0" />
+      <Text layoutX="22.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Course Major:" wrappingWidth="99.0" />
       <TextField fx:id="searchBar" layoutX="121.0" layoutY="314.0" prefHeight="23.0" prefWidth="175.0" />
     </children>
 </AnchorPane>

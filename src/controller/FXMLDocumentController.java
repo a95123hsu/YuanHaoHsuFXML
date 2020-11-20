@@ -9,11 +9,20 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
@@ -47,7 +56,45 @@ public class FXMLDocumentController implements Initializable {
     
      @FXML
     private Button searchButton;
+     
+    @FXML
+    private TableView<Course> CourseTable;
 
+    @FXML
+    private TableColumn<Course, Integer> idColum;
+
+    @FXML
+    private TableColumn<Course, String> CourseColum;
+
+    @FXML
+    private TableColumn<Course, String> majorColum;
+
+    @FXML
+    private TableColumn<Course, String> pronameColum;
+    
+    @FXML
+    private TextField searchBar;
+
+    
+//Source: Demo Code
+        private ObservableList<Course> courseData;
+
+    
+    public void setTableData(List<Course> studentList) {
+
+        
+        courseData = FXCollections.observableArrayList();
+
+        
+        studentList.forEach(c -> {
+            courseData.add(c);
+        });
+
+        
+        CourseTable.setItems(courseData);
+        CourseTable.refresh();
+    }
+    
 //Source:Demo Code
     @FXML
     void createCourse(ActionEvent event) {
@@ -163,6 +210,26 @@ public class FXMLDocumentController implements Initializable {
      @FXML
     void searchButton1(ActionEvent event) {
         System.out.println("Clicked");
+        
+        //Source: Demo Code     
+        String major = searchBar.getText();
+
+       
+        List<Course> courses = readByMajor(major);
+
+        if (courses == null || courses.isEmpty()) {
+
+           
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Search Dialog Box");
+            alert.setHeaderText("Search Results");
+            alert.setContentText("No Course Found");
+            alert.showAndWait(); 
+        } else {
+
+        
+            setTableData(courses);
+        }
     }
 
 
@@ -173,6 +240,14 @@ public class FXMLDocumentController implements Initializable {
         // TODO
         //Source:Demo Code
         manager = (EntityManager) Persistence.createEntityManagerFactory("YuanHaoHsuFXMLPU").createEntityManager();
+        
+        //Source: Demo Code
+         CourseColum.setCellValueFactory(new PropertyValueFactory<>("name"));
+        idColum.setCellValueFactory(new PropertyValueFactory<>("id"));
+        pronameColum.setCellValueFactory(new PropertyValueFactory<>("proname"));
+        majorColum.setCellValueFactory(new PropertyValueFactory<>("major"));
+
+        CourseTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
     }    
     //Source:Demo Code
