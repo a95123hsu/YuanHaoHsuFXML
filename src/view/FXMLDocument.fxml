@@ -41,5 +41,6 @@
       <Text layoutX="22.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Course Name:" wrappingWidth="99.0" />
       <TextField fx:id="searchBar" layoutX="121.0" layoutY="314.0" prefHeight="23.0" prefWidth="175.0" />
        <Button fx:id="advancedSearch" layoutX="238.0" layoutY="360.0" mnemonicParsing="false" onAction="#advancedSearch1" prefHeight="28.0" prefWidth="139.0" text="Advanced Search" />
+        <Button fx:id="showDetail" layoutX="22.0" layoutY="360.0" mnemonicParsing="false" onAction="#showDetailButton" prefHeight="28.0" prefWidth="84.0" text="Show Detail" />
     </children>
 </AnchorPane>

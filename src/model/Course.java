@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Course.findByName", query = "SELECT c FROM Course c WHERE c.name = :name")
     , @NamedQuery(name = "Course.findByMajor", query = "SELECT c FROM Course c WHERE c.major = :major")
     , @NamedQuery(name = "Course.findByProname", query = "SELECT c FROM Course c WHERE c.proname = :proname")})
+//source: demo code
      @NamedQuery(name = "Course.findByCourseNameAdvanced", query = "SELECT c FROM Course c WHERE  LOWER(c.name) LIKE  CONCAT('%', LOWER(:name), '%')")
 public class Course implements Serializable {
 
