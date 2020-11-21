@@ -9,10 +9,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import model.Course;
 
 /**
@@ -46,9 +49,23 @@ public class DetailedModelViewController {
 
     @FXML
     void backButton1(ActionEvent event) {
+        //Source:Demo Code
+          Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            
+        if (previousScene != null) {
+            stage.setScene(previousScene);
+        }
+
 
     }
 //Source: Demo Code
+     Scene previousScene;
+//Source: Demo Code
+    public void setPreviousScene(Scene scene) {
+        previousScene = scene;
+        backButton.setDisable(false);
+
+    }
     Course selectedModel;
        public void initData(Course model) {
         selectedModel = model;

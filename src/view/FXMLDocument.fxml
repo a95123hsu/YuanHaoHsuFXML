@@ -15,15 +15,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="500" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
     <children>
-     <Button fx:id="button" layoutX="380.0" layoutY="157.0" onAction="#handleButtonAction" text="Click Me!" />
-     <Label fx:id="label" layoutX="134.0" layoutY="148.0" minHeight="16" minWidth="69" />
-     <Button fx:id="createbutton" layoutX="47.0" layoutY="47.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="28.0" prefWidth="124.0" text="Create" />
+        <Button fx:id="button" layoutX="380.0" layoutY="157.0" onAction="#handleButtonAction" text="Click Me!" />
+      <Button fx:id="createbutton" layoutX="47.0" layoutY="47.0" mnemonicParsing="false" onAction="#createCourse" prefHeight="28.0" prefWidth="124.0" text="Create" />
       <Button fx:id="readbutton" layoutX="217.0" layoutY="47.0" mnemonicParsing="false" onAction="#readCourse" prefHeight="28.0" prefWidth="124.0" text="Read" />
       <Button fx:id="updatebutton" layoutX="47.0" layoutY="89.0" mnemonicParsing="false" onAction="#updateCourse" prefHeight="28.0" prefWidth="124.0" text="Update" />
       <Button fx:id="deletebutton" layoutX="47.0" layoutY="131.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="28.0" prefWidth="124.0" text="Delete" />
       <Button fx:id="readbyidbutton" layoutX="217.0" layoutY="89.0" mnemonicParsing="false" onAction="#readByID" prefHeight="28.0" prefWidth="124.0" text="ReadById" />
-      <Button fx:id="readbymabutton" layoutX="207.0" layoutY="131.0" mnemonicParsing="false" onAction="#readByMajor" prefHeight="28.0" prefWidth="156.0" text="ReadByMajor" />
-      <Button fx:id="searchButton" layoutX="307.0" layoutY="311.0" mnemonicParsing="false" onAction="#searchButton1" prefHeight="28.0" prefWidth="68.0" text="Search" />
+      <Button fx:id="readbymabutton" layoutX="207.0" layoutY="131.0" mnemonicParsing="false" onAction="#readByMajor" prefHeight="28.0" prefWidth="156.0" text="ReadByMajor" /> 
+      <Button fx:id="searchButton" layoutX="307.0" layoutY="281.0" mnemonicParsing="false" onAction="#searchButton1" prefHeight="28.0" prefWidth="68.0" text="Search" />
       <TableView fx:id="CourseTable" layoutX="11.0" layoutY="400.0" prefHeight="334.0" prefWidth="374.0">
         <columns>
           <TableColumn fx:id="idColum" prefWidth="61.0" text="ID" />
@@ -38,9 +37,10 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="22.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Course Name:" wrappingWidth="99.0" />
-      <TextField fx:id="searchBar" layoutX="121.0" layoutY="314.0" prefHeight="23.0" prefWidth="175.0" />
-       <Button fx:id="advancedSearch" layoutX="238.0" layoutY="360.0" mnemonicParsing="false" onAction="#advancedSearch1" prefHeight="28.0" prefWidth="139.0" text="Advanced Search" />
-        <Button fx:id="showDetail" layoutX="22.0" layoutY="360.0" mnemonicParsing="false" onAction="#showDetailButton" prefHeight="28.0" prefWidth="84.0" text="Show Detail" />
+      <Text layoutX="22.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Course Name:" wrappingWidth="99.0" />
+      <TextField fx:id="searchBar" layoutX="120.0" layoutY="283.0" prefHeight="23.0" prefWidth="175.0" />
+      <Button fx:id="advancedSearch" layoutX="238.0" layoutY="360.0" mnemonicParsing="false" onAction="#advancedSearch1" prefHeight="28.0" prefWidth="139.0" text="Advanced Search" />
+      <Button fx:id="showDetail" layoutX="22.0" layoutY="360.0" mnemonicParsing="false" onAction="#showDetailButton" prefHeight="28.0" prefWidth="84.0" text="Show Detail" />
+      <Button fx:id="showDetailwindow" layoutX="106.0" layoutY="322.0" mnemonicParsing="false" onAction="#showDetailPlace" prefHeight="28.0" prefWidth="156.0" text="Show Details in Place" />
     </children>
 </AnchorPane>

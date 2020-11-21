@@ -16,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -84,6 +85,36 @@ public class FXMLDocumentController implements Initializable {
     private Button advancedSearch; 
     @FXML
     private Button showDetail;
+    @FXML
+    private Button showDetailwindow;
+    
+    @FXML
+    void showDetailPlace(ActionEvent event) throws IOException {
+        System.out.println("clicked");
+
+        //Source: Demo Code
+        Course selectedCourse= CourseTable.getSelectionModel().getSelectedItem();
+
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DetailedModelView.fxml"));
+
+        Parent detailedModelView = loader.load();
+
+        Scene tableViewScene = new Scene(detailedModelView);
+
+        DetailedModelViewController detailedControlled = loader.getController();
+
+
+        detailedControlled.initData(selectedCourse);
+
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        detailedControlled.setPreviousScene(currentScene);
+
+        Stage stage = (Stage) currentScene.getWindow();
+        stage.setScene(tableViewScene);
+        stage.show();
+    }
+
     
      @FXML
     void showDetailButton(ActionEvent event) throws IOException {
