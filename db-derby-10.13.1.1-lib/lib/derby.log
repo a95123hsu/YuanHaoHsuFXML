@@ -1,0 +1,14 @@
+Sat Nov 21 04:14:44 GMT+08:00 2020 : Apache Derby 網路伺服器 - 10.13.1.1 - (1765088) 已啟動，並且準備接受連接埠 1527 上的連線
+----------------------------------------------------------------
+Sat Nov 21 04:16:45 GMT+08:00 2020：
+ 正在使用類別載入器 sun.misc.Launcher$AppClassLoader@55f96302 啟動資料庫
+目錄 C:\Users\a9512\Desktop\db-derby-10.13.1.1-lib\lib\gp11_db 中的 Derby 版本 The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088) 實例 a816c00e-0175-e74b-7756-0000357fe4bb
+載入自 file:/C:/Users/a9512/Desktop/db-derby-10.13.1.1-lib/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_261-b12
+user.dir=C:\Users\a9512\Desktop\db-derby-10.13.1.1-lib\lib
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\a9512\Desktop\db-derby-10.13.1.1-lib\lib
+已啟動「資料庫類別載入器」- derby.database.classpath= ''
